@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 220 20% 4%;
+    --foreground: 150 80% 90%;
+
+    --card: 220 18% 7%;
+    --card-foreground: 150 30% 85%;
+
+    --popover: 220 18% 9%;
+    --popover-foreground: 150 30% 85%;
+
+    --primary: 150 100% 45%;
+    --primary-foreground: 220 20% 4%;
+
+    --secondary: 220 15% 12%;
+    --secondary-foreground: 150 30% 80%;
+
+    --muted: 220 15% 10%;
+    --muted-foreground: 220 10% 50%;
+
+    --accent: 35 100% 55%;
+    --accent-foreground: 220 20% 4%;
+
+    --destructive: 0 85% 55%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 150 30% 15%;
+    --input: 220 15% 12%;
+    --ring: 150 100% 45%;
+
+    --radius: 0.5rem;
+
+    --glow-primary: 0 0 20px hsl(150 100% 45% / 0.3);
+    --glow-accent: 0 0 20px hsl(35 100% 55% / 0.3);
+    --glow-destructive: 0 0 20px hsl(0 85% 55% / 0.3);
+
+    --severity-critical: 0 85% 55%;
+    --severity-high: 25 100% 55%;
+    --severity-medium: 45 100% 50%;
+    --severity-low: 200 80% 55%;
+    --severity-info: 220 15% 45%;
+
+    --status-active: 150 100% 45%;
+    --status-paused: 45 100% 50%;
+    --status-closed: 0 0% 45%;
+    --status-paid: 150 100% 45%;
+    --status-rejected: 0 85% 55%;
+    --status-submitted: 200 80% 55%;
+
+    --sidebar-background: 220 18% 6%;
+    --sidebar-foreground: 150 30% 80%;
+    --sidebar-primary: 150 100% 45%;
+    --sidebar-primary-foreground: 220 20% 4%;
+    --sidebar-accent: 220 15% 12%;
+    --sidebar-accent-foreground: 150 30% 80%;
+    --sidebar-border: 150 30% 15%;
+    --sidebar-ring: 150 100% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .glow-primary {
+    box-shadow: var(--glow-primary);
+  }
+  .glow-accent {
+    box-shadow: var(--glow-accent);
+  }
+  .glow-destructive {
+    box-shadow: var(--glow-destructive);
+  }
+  .text-glow {
+    text-shadow: 0 0 10px hsl(150 100% 45% / 0.5);
+  }
+  .border-glow {
+    border-color: hsl(150 100% 45% / 0.3);
+    box-shadow: inset 0 0 20px hsl(150 100% 45% / 0.05), 0 0 15px hsl(150 100% 45% / 0.1);
+  }
+  .scanline {
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      hsl(150 100% 45% / 0.03) 2px,
+      hsl(150 100% 45% / 0.03) 4px
+    );
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+@keyframes terminal-blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
